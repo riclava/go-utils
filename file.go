@@ -17,6 +17,15 @@ func WriteFile(filename string, data []byte) bool {
 	return false
 }
 
+// ReadFile read bytes from file
+func ReadFile(filename string) (string, error) {
+	bytes, err := ioutil.ReadFile(filename)
+	if err != nil {
+		return "", err
+	}
+	return string(bytes), err
+}
+
 // IsFileExists check whether file is exists
 func IsFileExists(filename string) bool {
 	var exist = true
