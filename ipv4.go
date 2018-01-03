@@ -29,8 +29,7 @@ func GetIpv4Addr() string {
 			}
 			ipStr := string(ip.String())
 			if ipStr != "127.0.0.1" && ipStr != "::1" && !strings.HasPrefix(string(ipStr), "fe80") {
-				IPAddr = ipStr
-				break
+				return ipStr
 			}
 		}
 	}
